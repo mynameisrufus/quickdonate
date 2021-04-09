@@ -81,7 +81,10 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             slug
             name
-            image
+            colors {
+              primary
+              heading
+            }
             donations {
               id
               link

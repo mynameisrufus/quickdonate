@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 
-import SVG from './SVG'
+import BuyMeCoffee from './BuyMeCoffee'
 
 const StyledList = styled.div`
   list-style: none;
@@ -28,17 +28,18 @@ const StyledListItem = styled.div`
 `
 
 interface DonationsProps {
+  color: string
   donations: Donation[]
 }
 
-const Donations: React.FC<DonationsProps> = ({ donations }) => (
+const Donations: React.FC<DonationsProps> = ({ color, donations }) => (
   <StyledList>
     {donations.map(donation => {
       if (donation.type === 'coffee') {
         return (
           <StyledListItem key={donation.id}>
             <a href={donation.link} title={`Buy a volunteer a coffee for $${donation.amount}`}>
-              <SVG name="buymecoffee" />
+              <BuyMeCoffee color={color} />
             </a>
           </StyledListItem>
         )

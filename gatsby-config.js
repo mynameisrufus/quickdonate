@@ -15,22 +15,21 @@ module.exports = {
       {
         id: 'bdf32020-73c2-4cf8-bbe9-a12b1fb1f541',
         slug: '/cause/bdf32020-73c2-4cf8-bbe9-a12b1fb1f541',
-        name: 'South Hokianga',
-        organisation: 'St John',
-        image: 'stjohn',
+        name: 'St John South Hokianga',
         colors: {
-          primary: '#FEB913'
+          primary: '#FEB913',
+          heading: '#000000'
         },
         donations: [
           {
-            id: 'b43e8eae-1bb5-47f6-8f8b-96a3c7449f0d',
-            link: 'https://transact.polipay.co.nz/paynow/kus21002145ozt',
-            type: 'currency',
-            amount: 5
-          },
-          {
             id: 'a31fe023-2d3b-497d-af4d-95c54297a74b',
             link: 'https://transact.polipay.co.nz/paynow/kke21232145uoy',
+            type: 'currency',
+            amount: 20
+          },
+          {
+            id: 'b43e8eae-1bb5-47f6-8f8b-96a3c7449f0d',
+            link: 'https://transact.polipay.co.nz/paynow/kus21002145ozt',
             type: 'currency',
             amount: 10
           },
@@ -38,21 +37,13 @@ module.exports = {
             id: '01f93cb7-697c-4064-a297-e4c18ac5f907',
             link: 'https://transact.polipay.co.nz/paynow/xet21272143fvt',
             type: 'coffee',
-            amount: 4.5
+            amount: 5
           }
         ]
       }
     ]
   },
   plugins: [
-		{
-			resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: `${__dirname}/src/assets`
-        }
-      }
-		},
     {
       resolve: 'gatsby-source-filesystem',
       options: {
