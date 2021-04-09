@@ -2,14 +2,14 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'gatsby-starter-typescript-plus',
-    description: 'A starter kit for TypeScript-based Gatsby projects with sensible defaults.',
-    keywords: 'gatsbyjs, gatsby, javascript, sample, something',
-    siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com',
+    title: 'Quick Donate',
+    description: 'Quickly donate directly to your local charity.',
+    keywords: 'donate, charity',
+    siteUrl: 'https://quickdonate.org.nz',
     author: {
-      name: 'Resi Respati',
-      url: 'https://twitter.com/resir014',
-      email: 'resir014@gmail.com'
+      name: 'Rufus Post',
+      url: 'https://github.com/mynameisrufus/',
+      email: 'rufuspost@gmail.com'
     },
     causes: [
       {
