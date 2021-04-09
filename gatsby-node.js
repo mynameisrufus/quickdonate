@@ -66,19 +66,45 @@ exports.createPages = async ({ graphql, actions }) => {
 
     createPage({
       path: slug,
-      // This will automatically resolve the template to a corresponding
-      // `layout` frontmatter in the Markdown.
-      //
-      // Feel free to set any `layout` as you'd like in the frontmatter, as
-      // long as the corresponding template file exists in src/templates.
-      // If no template is set, it will fall back to the default `page`
-      // template.
-      //
-      // Note that the template has to exist first, or else the build will fail.
       component: path.resolve(`./src/templates/${layout || 'page'}.tsx`),
       context: {
-        // Data passed to context is available in page queries as GraphQL variables.
         slug
+      }
+    })
+  })
+
+  const allCauses = await graphql(`
+    {
+      site {
+        siteMetadata {
+          causes {
+            id
+            slug
+            name
+            image
+            donations {
+              id
+              link
+              type
+              amount
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (allCauses.errors) {
+    console.error(allCauses.errors)
+    throw new Error(allCauses.errors)
+  }
+
+  allCauses.data.site.siteMetadata.causes.forEach((cause) => {
+    createPage({
+      path: cause.slug,
+      component: path.resolve(`./src/templates/cause.tsx`),
+      context: {
+        cause
       }
     })
   })

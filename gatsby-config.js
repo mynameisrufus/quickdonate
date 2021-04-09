@@ -10,9 +10,49 @@ module.exports = {
       name: 'Resi Respati',
       url: 'https://twitter.com/resir014',
       email: 'resir014@gmail.com'
-    }
+    },
+    causes: [
+      {
+        id: 'bdf32020-73c2-4cf8-bbe9-a12b1fb1f541',
+        slug: '/cause/bdf32020-73c2-4cf8-bbe9-a12b1fb1f541',
+        name: 'South Hokianga',
+        organisation: 'St John',
+        image: 'stjohn',
+        colors: {
+          primary: '#FEB913'
+        },
+        donations: [
+          {
+            id: 'b43e8eae-1bb5-47f6-8f8b-96a3c7449f0d',
+            link: 'https://google.com',
+            type: 'currency',
+            amount: 5
+          },
+          {
+            id: 'a31fe023-2d3b-497d-af4d-95c54297a74b',
+            link: 'https://google.com',
+            type: 'currency',
+            amount: 10
+          },
+          {
+            id: '01f93cb7-697c-4064-a297-e4c18ac5f907',
+            link: 'https://google.com',
+            type: 'coffee',
+            amount: 4.5
+          }
+        ]
+      }
+    ]
   },
   plugins: [
+		{
+			resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: `${__dirname}/src/assets`
+        }
+      }
+		},
     {
       resolve: 'gatsby-source-filesystem',
       options: {
