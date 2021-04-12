@@ -10,7 +10,7 @@ const StyledList = styled.div`
 
 const StyledListItem = styled.div`
   text-align: center;
-  margin: 1em;
+  margin: 0.8em;
   display: block;
   font-size: 2em;
   font-weight: bold;
