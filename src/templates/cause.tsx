@@ -5,6 +5,7 @@ import Page from '../components/Page'
 import Container from '../components/Container'
 import Donations from '../components/Donations'
 import IndexLayout from '../layouts'
+import QRCode from '../components/QRCode'
 
 const Header = styled.h1`
   text-align: center;
@@ -19,6 +20,7 @@ const CausePage = ({ pageContext }) => (
     <Page>
       <Container>
         <Donations donations={pageContext.cause.donations} color={pageContext.cause.colors.primary} />
+        <QRCode value={pageContext.causeUrl} />
       </Container>
     </Page>
   </IndexLayout>

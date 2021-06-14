@@ -77,6 +77,7 @@ exports.createPages = async ({ graphql, actions }) => {
     {
       site {
         siteMetadata {
+          siteUrl
           causes {
             id
             slug
@@ -107,6 +108,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: cause.slug,
       component: path.resolve(`./src/templates/cause.tsx`),
       context: {
+        causeUrl: `${allCauses.data.site.siteMetadata.siteUrl}${cause.slug}`,
         cause
       }
     })
